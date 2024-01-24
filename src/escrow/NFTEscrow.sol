@@ -7,8 +7,10 @@ import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 import "@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol";
 
+import "@openzeppelin/contracts/access/Ownable.sol";
+
 // Interfaces
-import {IEscrow} from "@src/interface/IProposal.sol";
+import {IEscrow} from "@escrow/interface/IProposal.sol";
 
 // Errors
 error OnlyProposeeCanAcceptProposal();
