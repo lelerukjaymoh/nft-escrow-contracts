@@ -63,7 +63,7 @@ contract NFTEscrow is
         uint proposalId
     ) external proposalExists(proposalId) {
         // Ensure the proposal has been proposed before rejecting it
-        if (proposals[proposalId].status == ProposalStatus.Proposed)
+        if (proposals[proposalId].status != ProposalStatus.Proposed)
             revert ProposalIsNotPending(proposalId);
 
         // Ensure only the proposer can cancel the proposal
@@ -91,7 +91,7 @@ contract NFTEscrow is
         uint proposalId
     ) external proposalExists(proposalId) {
         // Ensure the proposal has been proposed before rejecting it
-        if (proposals[proposalId].status == ProposalStatus.Proposed)
+        if (proposals[proposalId].status != ProposalStatus.Proposed)
             revert ProposalIsNotPending(proposalId);
 
         // Ensure only the proposee can reject the proposal
