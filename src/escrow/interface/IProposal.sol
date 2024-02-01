@@ -4,8 +4,6 @@ pragma solidity >0.8.19;
 interface IEscrow {
     enum ProposalStatus {
         Proposed,
-        Pending,
-        Accepted,
         Completed,
         Rejected
     }
@@ -25,11 +23,7 @@ interface IEscrow {
         uint timestamp;
     }
 
-    function proposeSwap(NFT memory NFTIn, NFT memory NFTOut) external;
-
-    function acceptSwapProposal(uint256 proposalId) external;
-
-    function swap(uint256 proposalId) external;
+    function rejectProposal(uint256 proposalId) external;
 
     function cancelProposal(uint256 proposalId) external;
 
